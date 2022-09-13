@@ -18,7 +18,7 @@ int main(int argc, char const *argv[])
     if (pid == 0)
     {
         // child process
-        testval = 10000;
+        testval = 10010;
         //sent the value on the write descriptor:
         write(fd[1], &testval, sizeof(testval));
         cout << "child sent value: " << testval << endl;
@@ -32,6 +32,7 @@ int main(int argc, char const *argv[])
         read(fd[0], &testval, sizeof(testval));
         cout << "parent received value: " << testval << endl;
     }
+    
     out.close();
     return 0;
 }
